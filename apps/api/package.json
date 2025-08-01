@@ -1,11 +1,11 @@
 {
-  "name": "api",
+  "name": "@mx/api",
   "private": true,
   "scripts": {
     "build": "nitro build",
     "dev": "nitro dev",
     "prepare": "nitro prepare",
-    "preview": "node .output/server/index.mjs",
+    "start": "node .output/server/index.mjs",
     "postinstall": "bun prisma generate"
   },
   "devDependencies": {
