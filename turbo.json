@@ -3,7 +3,7 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["^build", "db:generate#apps/api"],
+      "dependsOn": ["^build", "^db:generate"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -17,7 +17,7 @@
       "cache": false,
       "persistent": true
     },
-    "prisma-generate": {
+    "db:generate": {
       "cache": true,
       "outputs": ["node_modules/.prisma/**"]
     }
