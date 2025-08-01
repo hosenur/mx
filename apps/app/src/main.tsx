@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {  QueryClientProvider } from "@tanstack/react-query";
 
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
@@ -13,8 +13,6 @@ import { queryClient } from "./lib/query.ts";
 
 Sentry.init({
   dsn: "https://933c9370a5f20a312fb9a9700d8c1b07@o4509768284962816.ingest.us.sentry.io/4509768297218048",
-  // Setting this option to true will send default PII data to Sentry.
-  // For example, automatic IP address collection on events
   sendDefaultPii: true,
 });
 
