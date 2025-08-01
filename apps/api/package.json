@@ -1,17 +1,15 @@
 {
-  "name": "@mx/api",
+  "name": "api",
   "private": true,
   "scripts": {
     "build": "nitro build",
     "dev": "nitro dev",
     "prepare": "nitro prepare",
-    "start": "node .output/server/index.mjs",
-    "db:generate": "bunx prisma generate"
+    "preview": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.19",
-    "nitro": "npm:nitro-nightly@latest",
-    "prisma": "6.13.0"
+    "nitropack": "latest",
+    "prisma": "^6.13.0"
   },
   "dependencies": {
     "@prisma/client": "6.13.0",
