@@ -1,5 +1,5 @@
 {
-  "name": "@mx/engine",
+  "name": "@mx/api",
   "private": true,
   "scripts": {
     "build": "nitro build",
