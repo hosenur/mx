@@ -16,4 +16,13 @@ export default defineConfig({
       "@": resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://mx-engine.railway.internal",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });
