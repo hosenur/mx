@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { prisma } from "~/lib/prisma";
+import { prisma } from "../../lib/prisma";
 
 const emailSchema = z.object({
   sender: z.email(),

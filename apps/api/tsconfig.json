@@ -1,4 +1,14 @@
-// https://nitro.unjs.io/guide/typescript
 {
-  "extends": "./.nitro/types/tsconfig.json"
+  "extends": "./.nitro/types/tsconfig.json",
+  "exclude": ["node_modules", "generated/**/*"],
+  // "compilerOptions": {
+  //   "noEmit": false,
+  //   "moduleResolution": "bundler",
+  //   "emitDeclarationOnly": true,
+  //   "declaration": true,
+  //   "baseUrl": ".",
+  //   "paths": {
+  //     "@/*": ["./server/*"]
+  //   }
+  // }
 }

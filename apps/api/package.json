@@ -9,7 +9,7 @@
     "postinstall": "bun prisma generate"
   },
   "devDependencies": {
-    "nitropack": "latest",
+    "nitro": "npm:nitro-nightly@latest",
     "prisma": "^6.13.0"
   },
   "dependencies": {
