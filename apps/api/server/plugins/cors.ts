@@ -1,4 +1,6 @@
 import cors from "cors";
+import { fromNodeMiddleware } from "h3";
+
 export default defineNitroPlugin((plugin) => {
   plugin.h3App.use(
     fromNodeMiddleware(
