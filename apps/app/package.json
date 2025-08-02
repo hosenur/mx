@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@mx/app",
   "private": true,
   "type": "module",
   "scripts": {
