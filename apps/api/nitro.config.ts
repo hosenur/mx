@@ -5,8 +5,7 @@ export default defineNitroConfig({
     "/**": {
       cors: true,
       headers: {
-        "Access-Control-Allow-Origin":
-          "https://rahaman.email",
+        "Access-Control-Allow-Origin": "https://rahaman.email",
         "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
         "Access-Control-Allow-Credentials": "true",
@@ -21,5 +20,8 @@ export default defineNitroConfig({
         "Access-Control-Allow-Credentials": "true",
       },
     },
+  },
+  runtimeConfig: {
+    DATABASE_URL: "",
   },
 });
