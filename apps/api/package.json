@@ -6,7 +6,7 @@
     "dev": "nitro dev",
     "prepare": "nitro prepare",
     "start": "node .output/server/index.mjs",
-    "postinstall": "bun prisma generate"
+    "postinstall": "nitro prepare && bun prisma generate"
   },
   "devDependencies": {
     "nitro": "npm:nitro-nightly@latest",
