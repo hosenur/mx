@@ -18,5 +18,7 @@ export const Route = createFileRoute("/")({
 });
 function Page() {
   const { data } = useSuspenseQuery(emailsQueryOptions);
-  return <div>{JSON.stringify(data)}</div>;
+  return <div>
+    hello
+  </div>;
 }
