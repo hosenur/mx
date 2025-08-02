@@ -1,3 +1,4 @@
+import { useURL } from "@/hooks/useURL";
 import { queryClient } from "@/lib/query";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
@@ -6,7 +7,8 @@ import axios from "axios";
 const emailsQueryOptions = queryOptions({
   queryKey: ["emails"],
   queryFn: async () => {
-    const { data } = await axios.get("http://localhost:3001/emails");
+    const URL = useURL("emails");
+    const { data } = await axios.get(URL);
     return data;
   },
 });
