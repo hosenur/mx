@@ -1,3 +1,4 @@
 export const useURL = (slug: string) => {
-  return `/api/${slug}`;
+  console.log(import.meta.env.VITE_BACKEND_URL);
+  return `http://${import.meta.env.VITE_BACKEND_URL}/${slug}`;
 };
