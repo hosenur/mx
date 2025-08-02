@@ -18,6 +18,7 @@ export const Route = createFileRoute("/")({
 });
 function Page() {
   const { data } = useSuspenseQuery(emailsQueryOptions);
+  console.log({data})
   return <div>
     hello
   </div>;
