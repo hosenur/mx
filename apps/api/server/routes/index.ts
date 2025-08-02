@@ -1,3 +1,9 @@
-export default defineEventHandler((event) => {
-  return "Start by editing <code>server/routes/index.ts</code>.";
+import { prisma } from "~/lib/prisma";
+
+export default defineEventHandler(async(event) => {
+  const emails = await prisma.email.findMany()
+  return {
+    status: "ok",
+    emails,
+  };
 });
