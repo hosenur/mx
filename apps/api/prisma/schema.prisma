@@ -92,10 +92,10 @@ model BackupEmail {
 model Email {
   id           String  @id @default(cuid())
   sender       String
-  receiver     String
+  recipient    String
   subject      String
   content_text String
-  content_html String
+  content_html String?
   User         User?   @relation(fields: [userId], references: [id])
   userId       String?
 
