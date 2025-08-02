@@ -24,4 +24,7 @@ export default defineNitroConfig({
   runtimeConfig: {
     DATABASE_URL: "",
   },
+  replace: {
+    "import * as process": "import * as unwanted_import",
+  },
 });
