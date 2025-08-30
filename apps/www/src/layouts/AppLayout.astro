@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import "@fontsource-variable/rethink-sans";
+import Header from "../components/Header.astro";
 ---
 
 <html lang="en">
@@ -12,6 +13,7 @@ import "@fontsource-variable/rethink-sans";
     <title>Astro</title>
   </head>
   <body class="bg-amber-50/50">
+    <Header/>
     <main class="max-w-2xl mx-auto p-4 py-16 flex flex-col gap-4">
       <slot />
     </main>
