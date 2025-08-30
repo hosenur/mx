@@ -4,15 +4,15 @@ import { RocketIcon } from "../icons/rocket";
 import { SparklesIcon } from "../icons/sparkles";
 ---
 
-<div class="min-h-20 grid grid-cols-3 border-neutral-300 border-dashed ">
+<div class=" grid  grid-cols-1 md:grid-cols-3 border-neutral-300 border-dashed ">
   <div
-    class="border-x p-2 border-neutral-300 border-dashed flex flex-col items-center"
+    class=" border-y md:border-y-0 md:border-x p-2 border-neutral-300 border-dashed flex flex-col items-center"
   >
     <div class="flex items-center gap-2">
       <AtSignIcon client:load size={18} className="text--400" />
       <p class="font-medium">Unlimited Domains</p>
     </div>
-    <p class="text-sm text-neutral-600 mt-1 text-center">
+    <p class="text-sm text-neutral-600 mt-1 text-center text-balance">
       Use any domain you own, or buy a new one through our partner.
     </p>
   </div>
@@ -23,17 +23,17 @@ import { SparklesIcon } from "../icons/sparkles";
       <RocketIcon client:load size={18} className="text--400" />
       <p class="font-medium">Self-Hosted</p>
     </div>
-    <p class="text-sm text-neutral-600 mt-1 text-center">
+    <p class="text-sm text-neutral-600 mt-1 text-center text-balance">
       Host the app on your own server or use our managed hosting.
     </p>
   </div>
-  <div class="p-2 border-x border-neutral-300 border-dashed flex flex-col items-center">
+  <div class="p-2 border-y md:border-y-0 md:border-x border-neutral-300 border-dashed flex flex-col items-center">
     <div class="flex items-center gap-2">
       <SparklesIcon client:load size={18} className="text--400" />
       <p class="font-medium">AI-Powered</p>
     </div>
-    <p class="text-sm text-neutral-600 mt-1 text-center">
-      Experience the future of email with AI-assisted features.
+    <p class="text-sm text-neutral-600 mt-1 text-center text-balance">
+      Experience the future of email with AI-assisted features like email
     </p>
   </div>
 </div>
