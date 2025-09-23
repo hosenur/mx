@@ -2,7 +2,7 @@
   "name": "@mx/engine",
   "private": true,
   "scripts": {
-    "postinstall": "bun prisma generate",
+    "postinstall": "bun prisma generate && nitro prepare",
     "build": "nitro build",
     "dev": "nitro dev",
     "prepare": "nitro prepare",
