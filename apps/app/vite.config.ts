@@ -1,15 +1,20 @@
-import { reactRouter } from "@react-router/dev/vite";
-import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import viteReact from "@vitejs/plugin-react";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { resolve } from "node:path";
+import tailwindcss from "@tailwindcss/vite";
 
-export default defineConfig(({ isSsrBuild }) => ({
-  build: {
-    rollupOptions: isSsrBuild
-      ? {
-          input: "./server/app.ts",
-        }
-      : undefined,
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    TanStackRouterVite({ autoCodeSplitting: true }),
+    viteReact(),
+    tailwindcss(),
+  ],
+
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./src"),
+    },
   },
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
-}));
+});
