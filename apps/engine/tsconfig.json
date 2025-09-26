@@ -1,8 +1,0 @@
-{
-  "extends": "./.nitro/types/tsconfig.json",
-  "exclude": ["node_modules", "generated/**/*"],
-  "compilerOptions": {
-    "noEmit": true,
-    "moduleResolution": "bundler"
-  }
-}
