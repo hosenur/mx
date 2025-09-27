@@ -7,7 +7,7 @@ import { z } from "zod";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse
 ) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method Not Allowed" });
@@ -17,16 +17,42 @@ export default async function handler(
   const mistral = createMistral({
     // custom settings
   });
+  const CATEGORIES = [
+    {
+      id: "1",
+      name: "Tech",
+    },
+    {
+      id: "2",
+      name: "Finance",
+    },
+    {
+      id: "3",
+      name: "Marketing",
+    },
+    {
+      id: "4",
+      name: "Other",
+    },
+  ];
 
   const { object } = await generateObject({
-    model: mistral("magistral-small-2507"),
+    model: mistral("magistral-medium-2507"),
     schema: z.object({
-      recipe: z.object({
-        category: z.string(),
-      }),
+      categoryId: z.string(), // return the id, not the name
     }),
-    prompt: `Classify the email category : ${payload.email.subject}`,
+    prompt: `You are a classifier. 
+Given the following categories with IDs:
+${CATEGORIES.map((c) => `${c.id}: ${c.name}`).join("\n")}
+
+Classify the email content into one of the categories. 
+Return only the category ID.
+
+Email:
+${payload.email.cleanedContent}`,
   });
+
+  console.log(object);
 
   return res.status(200).json({ success: true });
 }
