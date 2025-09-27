@@ -33,5 +33,5 @@
     "noPropertyAccessFromIndexSignature": false
   },
   "include": ["src/**/*"],
-  "exclude": ["generated/**/*", "node_modules", "dist"]
+  "exclude": ["src/generated/**/*", "node_modules", "dist"]
 }
