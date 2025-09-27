@@ -13,15 +13,17 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 model Label {
-  id        String  @id @default(cuid())
-  name      String
-  color     String?
-  userId    String?
-  user      User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id     String  @id @default(cuid())
+  name   String
+  color  String?
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("label")
 }
+
 model Account {
   id                String  @id @default(cuid())
   userId            String
@@ -56,6 +58,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  Label         Label[]
 }
 
 model VerificationToken {
