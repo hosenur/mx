@@ -1,15 +1,30 @@
 {
-  "name": "db",
+  "name": "@cloud/db",
   "module": "index.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
     "@types/bun": "latest"
   },
-  "scripts": {
-    "postinstall": "bun prisma generate"
-  },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^6.16.1",
+    "@prisma/client": "^6.16.1",
+    "prisma": "^6.16.1"
+  },
+  "scripts": {
+    "build": "bun prisma generate && rm -rf dist && bun tsc",
+    "generate": "bun prisma generate",
+    "db:push": "bun prisma db push",
+    "postinstall": "bun prisma generate"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
   }
 }

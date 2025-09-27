@@ -1,5 +1,5 @@
 {
-  "name": "calendar",
+  "name": "@cloud/calendar",
   "version": "0.1.0",
   "private": true,
   "scripts": {
