@@ -12,4 +12,19 @@ export const auth = betterAuth({
   socialProviders: {
     // Add social providers if needed
   },
+  databaseHooks: {
+    user: {
+      create: {
+        after: async (user) => {
+          await prisma.label.create({
+            data: {
+              name: "Others",
+              color: "#000000",
+              userId: user.id,
+            },
+          });
+        },
+      },
+    },
+  },
 });

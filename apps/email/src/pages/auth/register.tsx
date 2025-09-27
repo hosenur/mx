@@ -41,11 +41,12 @@ export default function RegisterPage() {
       if (!email) {
         throw new Error("Email not created");
       }
-      const { data } = await authClient.signUp.email({
+      const { data, error } = await authClient.signUp.email({
         password: value.password,
         name: value.name,
         email: email?.address,
       });
+      console.log({ data, error });
     },
   });
 

@@ -10,8 +10,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_DATABASE_URL")
 }
 
 model Label {
@@ -20,8 +21,22 @@ model Label {
   color  String?
   userId String?
   user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Email  Email[]
+}
 
-  @@map("label")
+model Email {
+  id         String   @id @default(cuid())
+  timestamp  DateTime @default(now())
+  from_name  String?
+  from_email String?
+  to_email   String?
+  subject    String?
+  html       String?
+  text       String?
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Label      Label    @relation(fields: [labelId], references: [id])
+  labelId    String
 }
 
 model Account {
@@ -59,6 +74,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   Label         Label[]
+  Email         Email[]
 }
 
 model VerificationToken {
