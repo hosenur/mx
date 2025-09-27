@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "bun prisma generate && rm -rf dist && bun tsc",
-    "generate": "bun prisma generate",
+    "generate": "bun prisma generate --no-engine",
     "db:push": "bun prisma db push",
     "postinstall": "bun prisma generate"
   },
